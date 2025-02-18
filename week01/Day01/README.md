@@ -53,6 +53,53 @@ React components are independent, reusable building blocks in a React applicatio
 - Use `export default ComponentName`; or export `{ ComponentName }`;
 - Must be wrapped inside a single parent element. Return only one root element (use `<></>` or `<div>` if needed).
 
+### Example of creating a functional component
+
+```jsx
+import React from "react";
+function Greeting(props){
+    return(
+        <div>
+            <h1>Hello, {props.name}!!</h1>
+        </div>
+    )
+}
+export default Greeting;
+```
+### Usage
+
+```jsx
+import Greeting from "./Greeting"
+function App(){
+    return(
+        <Greetings name= "Ananthu"/>
+    )
+}
+export default App;
+```
+## Topic : JSX
+
+### what is JSX?
+JSX, or JavaScript XML, is a syntax extension for JavaScript used in React to describe what the UI should look like. It allows developers to write HTML-like code within their JavaScript, making it easier to understand and maintain UI structures. While it resembles HTML, JSX is not directly understood by browsers and needs to be transpiled into regular JavaScript using tools like Babel. 
+
+- Declarative syntax to describe what components look like and how they work
+- Components must return a block of JSX
+- Extension of Javascript that allow us to embed Javascript,CSS and React Component into HTML
+- Each JSX element is converted to a `React.createElement` function call
+### implementing Javasript logic in Components
+```jsx
+function Menu(){
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closedHour = 22;
+    const isOpen = hour >= openHour && hour<= closedHour;
+    return(
+        <div>
+        {new Date().toLocaleTimeString()}:{isOpen}
+        </div>
+    )
+}
+```
 ### My Learning Experience 📖
 Today, I explored how React Strict Mode helps in debugging and enforcing best practices. Implementing it in my project provided insights into how it catches potential issues that might be overlooked.
 

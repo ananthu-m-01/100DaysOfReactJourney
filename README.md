@@ -26,20 +26,7 @@ Each day, I will update this repository with:
 - Notes and key takeaways
 - Challenges faced and how I resolved them
 
-## How to Use This Repo 🛠️
-- Clone the repository:
-  ```sh
-  git clone https://github.com/YOUR_GITHUB_USERNAME/100-days-of-react.git
-  ```
-- Navigate into the directory:
-  ```sh
-  cd 100-days-of-react
-  ```
-- Install dependencies:
-  ```sh
-  npm install
-  ```
-- Follow along with my daily progress!
+
 
 
 Stay tuned for exciting React updates! 🎉

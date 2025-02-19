@@ -97,3 +97,139 @@ As a Part of 100Days of React i build a simple ProfileCard React app. You can vi
 - Every tag needs to be closed
 - CSS inline styles are written like this : ``{{<style>}}``(to reference variable and then an object)
 - All event handlers and other properties need to be camelCased. Example :`onClick` or `onMouseOver`
+
+## Rendering List
+- `map()` method is used to rendering the list dynamically
+```jsx
+import React from  "react"
+const data = [
+    {
+        name: "John Doe",
+        skills: "JavaScript, React, Node.js",
+        salary: "$80,000"
+    },
+    {
+        name: "Jane Smith",
+        skills: "Python, Django, Machine Learning",
+        salary: "$90,000"
+    },
+    {
+        name: "Alice Johnson",
+        skills: "Java, Spring Boot, Microservices",
+        salary: "$95,000"
+    },
+    {
+        name: "Bob Williams",
+        skills: "C++, Data Structures, Algorithms",
+        salary: "$85,000"
+    },
+    {
+        name: "Charlie Brown",
+        skills: "HTML, CSS, JavaScript, Bootstrap",
+        salary: "$70,000"
+    },
+    {
+        name: "David Clark",
+        skills: "Angular, TypeScript, RxJS",
+        salary: "$88,000"
+    },
+    {
+        name: "Emma Davis",
+        skills: "Swift, iOS Development, UI/UX",
+        salary: "$92,000"
+    },
+    {
+        name: "Franklin Miller",
+        skills: "Kotlin, Android Development, Firebase",
+        salary: "$87,000"
+    },
+    {
+        name: "Grace Hall",
+        skills: "PHP, Laravel, MySQL",
+        salary: "$78,000"
+    },
+    {
+        name: "Henry Wilson",
+        skills: "DevOps, AWS, Docker, Kubernetes",
+        salary: "$110,000"
+    }
+];
+
+function Office(){
+    return(
+        <ul>
+            {data.map(item => <Employee employeeObj={item} key={item.name}/> )}
+        </ul>
+    )
+}
+
+function Employee(props){
+    return(
+        <li>
+            <h3>{props.employeeObj.name}</h3>
+            <h4>{props.employeeObj.skills}<h4>
+            <h4>{props.employeeObj.salary}</h4>
+        </li>
+    )
+}
+
+```
+
+## Conditional rendering with && 
+
+```jsx
+function Menu(){
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closedHour = 22;
+    const isOpen = hour >= openHour && hour<= closedHour;
+    return(
+        <div>
+        {isOpen && <p>We are Open until {closedHour} :00</p>}
+        </div>
+    )
+}
+```
+```jsx
+function Menu(){
+    const employees = data;
+    const numberOfEmployees = employees.length;
+
+    return(
+        <h1>Details of Employees</h1>
+        {
+            numberOfEmployees > 0 && (
+            <ul>
+                {
+                    employees.map((employee) =>(
+                        <Employee employeeObj={employee} key={emploee}>
+                    ))
+                }
+            </ul>    
+        )}
+    )
+}
+```
+## Conditional rendering with Ternaries
+
+```jsx
+function Menu(){
+    const employees = data;
+    const numberOfEmployees = employees.length;
+
+    return(
+        <h1>Details of Employees</h1>
+        {
+            numberOfEmployees > 0 ? (
+            <ul>
+                {
+                    employees.map((employee) =>(
+                        <Employee employeeObj={employee} key={emploee}>
+                    ))
+                }
+            </ul>    
+        ): <p>No Data available</p>
+        }
+    )
+}
+```

@@ -75,7 +75,8 @@ function Product(props){
 
 ## Profile Card
 
-As a Part of 100Days of React i build a simple ProfileCard React app. You can visite ProfileCard (Repository) to see my react project which i have been completed on the day2 of 100 Days of React Challenge.
+As a part of **100 Days of React**, I built a simple **ProfileCard** React app. You can visit [ProfileCard (Repository)](https://github.com/ananthu-m-01/Profile-Card) to see my React project, which I completed on **Day 2** of the **100 Days of React** Challenge.
+
 
 ### Technologies used in the Profile Card Project
 - React vite
@@ -228,8 +229,22 @@ function Menu(){
                     ))
                 }
             </ul>    
-        ): <p>No Data available</p>
+        ): <p>No Data available </p>
         }
+    )
+}
+```
+
+```jsx
+function Menu(){
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closedHour = 22;
+    const isOpen = hour >= openHour && hour<= closedHour;
+    return(
+        <div>
+        {isOpen ? <p>We are Open until {closedHour} :00</p> : <p>Closed</p>}
+        </div>
     )
 }
 ```

@@ -26,8 +26,8 @@ function App(){
     )
 }
 
+```
 ```css
-/* index.css */
 .header {
     color: blue;
     font-size: 24px;

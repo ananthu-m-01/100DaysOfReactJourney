@@ -1,4 +1,4 @@
-# Day 1: Working with Components Props and JSX
+# Day 1:
 
 ## Topic: React Strict Mode
 
